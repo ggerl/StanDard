@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
-public class QuestManager : MonoBehaviour
+public partial class QuestManager : MonoBehaviour
 {
     // [구현사항 1] 정적 필드 정의
     private static QuestManager instance;
