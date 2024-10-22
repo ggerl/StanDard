@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[CreateAssetMenu(fileName = "EncounterQuestDataSO", menuName = "ScriptableObjects/EncounterQuestDataSO", order = 1)]
 
-public class NewBehaviourScript : MonoBehaviour
+public class EncounterQuestDataSO : QuestDataSO
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string QuestBehavior;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+
 }

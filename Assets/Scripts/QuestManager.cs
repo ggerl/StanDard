@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -5,10 +6,15 @@ using UnityEngine;
 
 public partial class QuestManager : MonoBehaviour
 {
-    // [구현사항 1] 정적 필드 정의
+    [Serializable]
+    private class Quest
+    {
+
+
+    }
+
     private static QuestManager instance;
 
-    // [구현사항 2] 정적 프로퍼티 정의
     public static QuestManager Instance
     {
         get
@@ -19,7 +25,7 @@ public partial class QuestManager : MonoBehaviour
 
                 if(instance == null)
                 {
-                    GameObject obj = new  GameObject("QuestManager");
+                    GameObject obj = new GameObject("QuestManager");
                     instance = obj.AddComponent<QuestManager>(); 
                 }
             }
@@ -28,7 +34,6 @@ public partial class QuestManager : MonoBehaviour
         }
     }
 
-    // [구현사항 3] 인스턴스 검사 로직
     private void Awake()
     {
         if(instance != null)
