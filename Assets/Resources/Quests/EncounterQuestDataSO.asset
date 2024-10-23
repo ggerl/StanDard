@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2845faa9084c4240a52443d17a0ef5a, type: 3}
   m_Name: EncounterQuestDataSO
   m_EditorClassIdentifier: 
-  QuestName: 
-  QuestRequiredLevel: 0
+  QuestName: "\uC720\uB2C8\uD2F0 \uB9C8\uC2A4\uD130\uAC00 \uB418\uB294 \uAE38"
+  QuestRequiredLevel: 70
   QuestNPC: 0
   QuestPrerequisites: 
   QuestBehavior: 
