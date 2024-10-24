@@ -1,25 +1,49 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class Pool
+{
+    public string tag;
+    public GameObject prefabs;
+    public int size;
+
+}
 public class ObjectPool : MonoBehaviour
 {
-    public GameObject prefab;
+    
     private List<GameObject> pool = new List<GameObject>();
     private Dictionary<string, List<GameObject>> pools;
-    public int poolSize = 300;
+    public List<Pool> poolInspector;
 
 
     void Start()
     {
         pools = new Dictionary<string, List<GameObject>>();
 
-        for (int i = 0; i < poolSize; i++)
+        foreach (var pool in poolInspector)
         {
-            pool.Add(Instantiate(prefab));
+            InitializePool(pool.tag, pool.prefabs, pool.size);
+        }
+    }
+
+    private void InitializePool(string tag, GameObject prefab ,  int size)
+    {
+
+        List<GameObject> pool = new List<GameObject>();
+
+        for (int i = 0; i < size; i++)
+        {
+            GameObject obj = Instantiate(prefab);
+            obj.SetActive(false);
+            pool.Add(obj);
 
         }
         pools.Add("Arrow", pool);
-    }
 
+
+
+    }
     public GameObject Get(string tag)
     {
         foreach (GameObject obj in pools[tag])
